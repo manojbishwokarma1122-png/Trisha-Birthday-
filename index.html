@@ -355,14 +355,16 @@ for(let i=0;i<18;i++){
  document.body.appendChild(s);
 }
 function startCake(){
- let music = document.getElementById('music');
+ let music=document.getElementById('music');
+ let c=document.getElementById('cake');
 
- music.play().then(updateMusicButton).catch(error => {
-  console.log('Music could not play:', error);
- });
-
- let c = document.getElementById('cake');
+ c.classList.remove('cutcake');
+ void c.offsetWidth;
  c.classList.add('cutcake');
+
+ music.play().then(updateMusicButton).catch(error=>{
+  alert('Music could not play. Check music.mp3');
+ });
 
  setTimeout(()=>{
   show('p2');
