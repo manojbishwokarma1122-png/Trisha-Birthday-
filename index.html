@@ -352,16 +352,20 @@ for(let i=0;i<18;i++){
  s.style.fontSize=(9+Math.random()*13)+'px';
  document.body.appendChild(s);
 }
-let music = document.getElementById('music');
+function startCake(){
+ let music = document.getElementById('music');
 
-if (!music) {
-    music = new Audio();
-    music.id = 'music';
-    document.body.appendChild(music);
+ music.play().then(updateMusicButton).catch(error => {
+  console.log('Music could not play:', error);
+ });
+
+ let c = document.getElementById('cake');
+ c.classList.add('cutcake');
+
+ setTimeout(()=>{
+  show('p2');
+ },1000);
 }
-
-music.src = 'assets/music.mp3';
-music.loop = true;
 document.getElementById('music').addEventListener('play',updateMusicButton);
 document.getElementById('music').addEventListener('pause',updateMusicButton);
 </script>
