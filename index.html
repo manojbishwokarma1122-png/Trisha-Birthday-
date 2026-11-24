@@ -366,8 +366,18 @@ function startCake(){
   show('p2');
  },1000);
 }
-document.getElementById('music').addEventListener('play',updateMusicButton);
-document.getElementById('music').addEventListener('pause',updateMusicButton);
+const music = document.getElementById("music");
+const btn = document.getElementById("musicToggle");
+
+btn.addEventListener("click", function() {
+  if (music.paused) {
+    music.play();
+    btn.innerHTML = "⏸ Pause Music";
+  } else {
+    music.pause();
+    btn.innerHTML = "🎵 Play Music";
+  }
+});
 </script>
 </body>
 </html>
