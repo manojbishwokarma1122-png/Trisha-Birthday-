@@ -1,230 +1,365 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ne">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Happy Birthday Trishu ❤️</title>
-
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  color: #9c2865;
-  background: linear-gradient(135deg,#ffe0ef,#fff5fa,#ffc9e4);
-  min-height: 100vh;
-}
-
-.container {
-  padding: 35px 18px;
-  max-width: 700px;
-  margin: auto;
-}
-
-h1 { font-size: 32px; }
-
-p {
-  font-size: 19px;
-  line-height: 1.8;
-}
-
-button {
-  background: #e34e99;
-  color: white;
-  border: none;
-  padding: 14px 23px;
-  border-radius: 30px;
-  font-size: 17px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #c92d7d;
-}
-
-.page { display: none; }
-.page.active { display: block; }
-
-.cake {
-  font-size: 100px;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  50% { transform: translateY(-12px); }
-}
-
-img {
-  width: 90%;
-  max-width: 280px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 20px;
-  margin: 10px;
-  box-shadow: 0 5px 15px #d75b9844;
-}
-
-.letter {
-  background: white;
-  padding: 22px;
-  border-radius: 20px;
-  line-height: 2;
-  white-space: pre-line;
-  font-size: 18px;
-  box-shadow: 0 5px 20px #d75b9833;
-}
-
-.heart {
-  font-size: 35px;
-  animation: heartbeat 1s infinite;
-}
-
-@keyframes heartbeat {
-  50% { transform: scale(1.3); }
-}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(135deg,#fff4fa,#ffd8ec,#ffeaf5);font-family:Georgia,serif;color:#8b315f;overflow-x:hidden}
+.wrap{min-height:100vh;display:grid;place-items:center;padding:22px}
+.card{width:min(850px,100%);background:#ffffffdf;border:1px solid white;border-radius:28px;box-shadow:0 18px 65px #bb558333;padding:clamp(20px,5vw,45px);text-align:center;position:relative;z-index:1}
+.page{display:none}.page.active{display:block;animation:fade .7s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+h1{font-size:clamp(30px,6vw,48px);color:#c34c87;margin:15px 0}
+.lead{font-size:clamp(18px,4vw,24px);line-height:1.6}
+.tag{letter-spacing:3px;text-transform:uppercase;font-size:12px;color:#c66d99}
+.btn{border:0;border-radius:999px;background:linear-gradient(120deg,#eb83b6,#c44784);color:white;padding:14px 22px;font-size:17px;margin:12px 5px;box-shadow:0 8px 20px #c4478433;cursor:pointer}
+.btn:disabled{opacity:.4}
+.cake{font-size:92px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px)}}
+.cake-wrap{position:relative;display:inline-block}
+.num{position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:27px;font-weight:bold;color:#b53776;background:#fff6fb;border-radius:50%;padding:4px 9px;border:2px solid #f5a6ce}
+.candle{font-size:24px;position:absolute;top:-28px;left:50%;transform:translateX(-50%);animation:flame .7s infinite alternate}
+@keyframes flame{to{transform:translateX(-50%) scale(1.15);filter:brightness(1.4)}}
+.cutcake{animation:cut 1.2s forwards}
+@keyframes cut{50%{transform:rotate(-12deg) scale(.92);opacity:.65}to{transform:translateY(12px) scale(.7);opacity:0}}
+.letter{text-align:left;white-space:pre-line;line-height:1.85;font-size:17px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:13px;margin:20px 0}
+.gallery img{width:100%;height:230px;object-fit:cover;border-radius:16px;box-shadow:0 8px 18px #a9437422}
+.caption{font-style:italic;margin:8px}
+.final{white-space:pre-line;line-height:1.9;font-size:19px}
+.question{text-align:left;background:#fff3fa;border-radius:18px;padding:16px;margin:14px 0}
+.question label{display:block;margin:10px;padding:10px;border-radius:12px;background:white;cursor:pointer}
+.question input{accent-color:#c44784;margin-right:10px}
+.petals,.hearts,.balloons{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.petal,.heart{position:absolute;animation:fall 10s linear infinite;opacity:.55}
+@keyframes fall{from{transform:translateY(-10vh) rotate(0);opacity:0}15%{opacity:.6}to{transform:translateY(110vh) rotate(500deg);opacity:0}}
+.balloon{position:absolute;bottom:-130px;animation:rise 14s linear infinite;font-size:40px}
+@keyframes rise{to{transform:translateY(-120vh)}}
+.fireworks{font-size:30px;animation:boom 1.5s infinite alternate}
+@keyframes boom{to{transform:scale(1.3)}}
+.small{font-size:13px;color:#b66c92}
+.type-card{margin:22px auto 12px;max-width:690px;padding:clamp(20px,4vw,34px);border:1px solid #f7c5dc;border-radius:24px;background:linear-gradient(145deg,#fffafd,#fff0f7);box-shadow:0 12px 35px #d75b9830}
+.type-text{font-family:system-ui,'Noto Sans Devanagari',sans-serif;font-size:clamp(18px,4vw,24px);line-height:2;color:#87345f;white-space:pre-wrap;min-height:245px;text-align:center}
+.type-text:after{content:'|';color:#d34b91;animation:blink .75s steps(2,start) infinite}
+.love-letter-card{max-width:760px;background:linear-gradient(145deg,#fffafd,#fff0f7);text-align:left}
+.love-letter-text{text-align:left;min-height:280px;font-size:clamp(16px,3.7vw,20px);line-height:2.05;white-space:pre-wrap}
+@keyframes blink{to{visibility:hidden}}
+.type-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.upload-panel{background:#fff3fa;border:1px solid #f4c4dc;border-radius:18px;padding:18px;margin:14px 0;text-align:left}
+.upload-panel input{display:block;width:100%;margin-top:10px}
+.media-preview{width:100%;max-height:320px;border-radius:16px;margin-top:12px}
 </style>
 </head>
-
 <body>
 
-<audio id="music" src="assets/music.mp3" loop></audio>
+<div class="petals" id="petals"></div>
+<div class="hearts" id="hearts"></div>
+<div class="balloons" id="balloons"></div>
 
-<div class="container">
+<div class="wrap">
+<main class="card">
 
-<!-- PAGE 1 -->
-<section id="one" class="page active">
-
-<h1>🎂 Happy Birthday Trishu ❤️</h1>
-
-<div class="cake">🎂</div>
-
-<p>My Love, My Baby, My Everything! 💗</p>
-
-<p>आजको दिन तिम्रो लागि धेरै विशेष छ।</p>
-
-<button onclick="start()">
-Open Your Surprise ❤️
-</button>
-
+<section id="p1" class="page active">
+<div class="tag">A little surprise for you</div>
+<h1>Happy Birthday, Trishu ❤️</h1>
+<div class="cake-wrap">
+<div class="candle">🕯️</div>
+<div class="num">26</div>
+<div class="cake" id="cake">🎂</div>
+</div>
+<div class="lead">My Love, My Baby ❤️<br>My Happiness 😍<br>My Everything 🌎</div>
+<button class="btn" onclick="startCake()">Click Me, My Love ❤️</button>
+<p class="small">Make a wish, my love ✨</p>
 </section>
 
-<!-- PAGE 2 -->
-<section id="two" class="page">
-
-<h1>जन्मदिनको शुभकामना मेरी माया! 🌹</h1>
-
-<p>
-मेरी प्यारी Trishu ❤️
-
-तिम्रो जीवन सधैँ खुसी, माया र सफलताले भरियोस्।
-तिम्रो अनुहारको मुस्कान कहिल्यै नहराओस्।
-तिम्रा सबै सपना पूरा होऊन्।
-
-तिमी मेरो जीवनको सबैभन्दा सुन्दर उपहार हौ।
-म तिमीलाई धेरै माया गर्छु। ❤️
-</p>
-
-<button onclick="show('three')">
-Next Surprise 💌
-</button>
-
+<section id="p2" class="page">
+<div class="tag">तिम्रो लागि मेरो मनको कुरा ❤️</div>
+<h1>जन्मदिनको शुभकामना, Trishu! 🌸</h1>
+<div class="type-card"><div id="birthdayTyping" class="type-text"></div></div>
+<div class="type-actions">
+<button class="btn" onclick="startTyping(true)">फेरि पढौँ ↻</button>
+<button class="btn" id="nextLetterBtn" style="display:none" onclick="show('p3')">मेरो चिठी पढ ❤️</button>
+</div>
 </section>
 
-<!-- PAGE 3 -->
-<section id="three" class="page">
+<section id="p3" class="page">
+<div class="tag">From my heart to yours ❤️</div>
+<h1>मेरो Trishu का लागि एउटा चिठी 💌</h1>
+<div class="type-card love-letter-card">
+<div id="loveLetterTyping" class="type-text love-letter-text"></div>
+<div class="type-actions">
+<button class="btn" onclick="startLoveLetterTyping(true)">फेरि पढौँ ↻</button>
+<button class="btn" id="letterContinueBtn" style="display:none" onclick="show('p4')">हाम्रा सम्झनाहरू हेरौँ 📸</button>
+</div>
+</div>
+</section>
 
-<h1>मेरो सानो Love Letter 💌</h1>
+<section id="p4" class="page">
+<div class="tag">Our story, our moments</div>
+<h1>Our Memories ❤️</h1>
+<div class="gallery">
+<div><img src="assets/photo1.jpg"><div class="caption">The little moments that mean everything.</div></div>
+<div><img src="assets/photo2.jpg"><div class="caption">Your smile is my favourite place.</div></div>
+<div><img src="assets/photo3.jpg"><div class="caption">Every little touch feels like home.</div></div>
+<div><img src="assets/photo4.jpg"><div class="caption">You deserve all the flowers in the world.</div></div>
+<div><img src="assets/photo5.jpg"><div class="caption">Our story, our moments, our love.</div></div>
+<div><img src="assets/photo6.jpg"><div class="caption">My favourite memories are the ones with you.</div></div>
+</div>
+<button class="btn" onclick="show('p5')">One last surprise… 💝</button>
+</section>
 
-<div class="letter">
-मेरो प्यारी Trishu,
+<section id="p5" class="page">
+<div class="tag">One last surprise for you</div>
+<h1>❤️</h1>
+<div id="count" class="lead">3</div>
+<button class="btn" id="countbtn" onclick="countdown()">Start Countdown ✨</button>
+</section>
 
-तिमी मेरो खुसी हौ, मेरो मुस्कान हौ र मेरो संसार हौ।
+<section id="p6" class="page">
+<div class="tag">From my heart</div>
+<h1>मेरो Trishu, मेरो संसार ❤️</h1>
+<div class="final">
+यदि यो संसारमा तिमीलाई एउटा उपहार दिन पाउने भए, म तिमीलाई आफ्नै आँखाबाट आफूलाई हेर्न सक्ने शक्ति दिन्थेँ। त्यसपछि तिमीले बुझ्ने थियौ, मेरो लागि तिमी कति अनमोल छौ, कति सुन्दर छौ र मेरो जीवनमा तिम्रो स्थान कति ठूलो छ। ❤️
 
-तिमीसँग बिताएका हरेक पल मेरा लागि अमूल्य छन्।
-तिमी सधैँ मेरो साथमा रहनू।
-म तिमीलाई आजभन्दा भोलि अझ धेरै माया गर्नेछु।
+तिमी केवल मेरो माया होइनौ, तिमी मेरो खुसी, मेरो शान्ति, मेरो मुस्कान र मेरो संसार हौ। तिमीलाई माया गर्नु मेरो जीवनको सबैभन्दा सुन्दर अनुभूति हो। ❤️
 
-तिमी मेरो लागि सधैँ Special छौ।
+जन्मदिनको धेरै धेरै शुभकामना, मेरी प्यारी Trishu।
+म तिमीलाई आज मात्र होइन, हरेक दिन अझ धेरै माया गर्न चाहन्छु। ❤️🌎
+</div>
+<div class="fireworks">🎆 💗 🎆</div>
+<button class="btn" onclick="show('p7')">A Few Questions for My Love ☑️</button>
+</section>
 
-Forever Yours ❤️
+<section id="p7" class="page">
+<div class="tag">Choose the right answers</div>
+<h1>A Few Questions for My Love 💗</h1>
+<form id="quiz">
+<div class="question"><b>1. Do you love me? ❤️</b>
+<label><input type="radio" name="q1" value="a">Yes, endlessly ❤️</label>
+<label><input type="radio" name="q1" value="b">Not sure 🤔</label></div>
+<div class="question"><b>2. Will you stay by my side? 🥹</b>
+<label><input type="radio" name="q2" value="a">Forever and always 🥰</label>
+<label><input type="radio" name="q2" value="b">Maybe sometimes</label></div>
+<div class="question"><b>3. Am I your happiness? 💗</b>
+<label><input type="radio" name="q3" value="a">Yes, my happiness 😘</label>
+<label><input type="radio" name="q3" value="b">I don't know</label></div>
+<div class="question"><b>4. Can I hug you right now? 🤗</b>
+<label><input type="radio" name="q4" value="a">Yes, come here 🤗</label>
+<label><input type="radio" name="q4" value="b">No hugs</label></div>
+<div class="question"><b>5. Will you be mine forever? 🌎</b>
+<label><input type="radio" name="q5" value="a">Yes, forever ❤️</label>
+<label><input type="radio" name="q5" value="b">Let's see</label></div>
+<button class="btn" type="button" onclick="checkQuiz()">Submit ❤️</button>
+</form>
+<p id="quizmsg"></p>
+</section>
+
+<section id="p8" class="page">
+<div class="tag">You got them all right!</div>
+<h1>❤️ I Love You, Trishu ❤️</h1>
+<div class="final">तिमी मेरो खुसी, मेरो शान्ति, मेरो मुस्कान र मेरो संसार हौ।
+
+म तिमीलाई हरेक दिन अझ धेरै माया गर्न चाहन्छु। ❤️🌎</div>
+<div class="fireworks">🎆 🎉 💗 🎉 🎆</div>
+<button class="btn" onclick="show('p9')">अन्तिम सरप्राइज खोल ❤️</button>
+</section>
+
+<section id="p9" class="page">
+<div class="tag">A little piece of me, just for you</div>
+<h1>मेरो आवाज र हाम्रो भिडियो ❤️</h1>
+<p class="lead">यहाँ आफ्नो आवाज र तिमीहरू दुवैको भिडियो छान।</p>
+<div class="upload-panel">
+<b>🎙️ मेरो Birthday Voice Message</b>
+<input id="voiceFile" type="file" accept="audio/*">
+<audio id="voicePreview" class="media-preview" controls style="display:none"></audio>
+</div>
+<div class="upload-panel">
+<b>🎬 हाम्रो Special Video</b>
+<input id="videoFile" type="file" accept="video/*">
+<video id="videoPreview" class="media-preview" controls playsinline style="display:none"></video>
+</div>
+<div class="final">तिमीलाई हरेक दिन मुस्कुराएको देख्न पाऊँ।
+जन्मदिनको धेरै धेरै शुभकामना, मेरी Trishu। ❤️
+Forever yours. 💋</div>
+<button class="btn" onclick="show('p1')">फेरि सुरुदेखि हेरौँ ❤️</button>
+</section>
+
+</main>
 </div>
 
-<button onclick="show('four')">
-Our Memories 📸
-</button>
-
-</section>
-
-<!-- PAGE 4 -->
-<section id="four" class="page">
-
-<h1>Our Beautiful Memories ❤️</h1>
-
-<img src="assets/photo1.jpg" alt="Memory 1">
-<img src="assets/photo2.jpg" alt="Memory 2">
-<img src="assets/photo3.jpg" alt="Memory 3">
-<img src="assets/photo4.jpg" alt="Memory 4">
-<img src="assets/photo5.jpg" alt="Memory 5">
-<img src="assets/photo6.jpg" alt="Memory 6">
-
-<button onclick="show('five')">
-Final Surprise 🎁
-</button>
-
-</section>
-
-<!-- PAGE 5 -->
-<section id="five" class="page">
-
-<h1>❤️ I LOVE YOU TRISHU ❤️</h1>
-
-<div class="cake">🎂🌹💗</div>
-
-<div class="heart">❤️</div>
-
-<p>
-जन्मदिनको धेरै धेरै शुभकामना!
-
-तिमी सधैँ मुस्कुराइरहनू।
-तिम्रो हरेक दिन सुन्दर बनोस्।
-मेरो माया सधैँ तिम्रो साथमा रहनेछ। ❤️
-</p>
-
-<h1>Forever Together 💑</h1>
-
-<button onclick="show('one')">
-Start Again ❤️
-</button>
-
-</section>
-
-</div>
+<audio id="music" loop src="assets/music.mp3"></audio>
 
 <script>
+let typingTimer=null;
+let loveLetterTimer=null;
 
-function show(id) {
- document.querySelectorAll('.page').forEach(p => {
-   p.classList.remove('active');
- });
+const birthdayMessage=`मेरी प्यारी Trishu ❤️
 
+जन्मदिनको धेरै धेरै शुभकामना, मेरी Baby! 🎂💗
+
+तिम्रो जीवन सधैँ हाँसो, खुसी, माया र सुन्दर सपनाहरूले भरियोस्। तिमीले देखेका हरेक सपना पूरा होऊन्, तिम्रो मुहारको मुस्कान कहिल्यै नहराओस्। 🥹
+
+तिमी मेरो जीवनमा आएको दिनदेखि मेरा धेरै साधारण पलहरू पनि विशेष बनेका छन्। तिम्रो खुसी मेरो लागि धेरै ठूलो कुरा हो। आजको यो विशेष दिनमा म तिमीलाई भन्न चाहन्छु—तिमी मेरो लागि निकै अनमोल छौ। ❤️
+
+सधैँ यस्तै मुस्कुराइरहनू, मेरी माया। म तिम्रो हरेक खुसीको कारण बन्न सकूँ।
+
+Happy Birthday, My Baby Trishu! 🎉🌹
+म तिमीलाई धेरै धेरै माया गर्छु। ❤️🌎`;
+
+const loveLetterMessage=`मेरो माया, मेरो बेबी, मेरो खुसी, मेरो संसार… ❤️🌎
+
+जन्मदिनको धेरै धेरै शुभकामना, मेरो जीवनलाई अझ सुन्दर बनाइदिने सबैभन्दा सुन्दर मन भएकी मान्छेलाई। 🥹❤️
+
+कहिलेकाहीँ म सोच्ने गर्छु, एउटा मान्छे अर्को मान्छेका लागि यति धेरै खास कसरी हुन सक्छ? अनि जब तिम्रो बारेमा सोच्छु, यसको जवाफ आफैँ पाउँछु। तिमी मेरो माया मात्र होइनौ, तिमी त्यो शान्ति हौ जुन मेरो मनले खोजिरहन्छ। तिमी त्यो मुस्कान हौ जसले मेरो हरेक दिनलाई सुन्दर बनाउँछ। अनि तिम्रो खुसी मेरो लागि यति धेरै महत्त्वपूर्ण छ कि त्यसलाई शब्दमा बयान गर्नै सक्दिनँ।
+
+हाम्रो यो सुन्दर यात्रा, हामीले सँगै बिताएका पलहरू, साना-साना कुराकानी, मुस्कान, सम्झनाहरू अनि कहिलेकाहीँ केही नबोली एकअर्काको नजिक भएर बिताएका क्षणहरू मेरा लागि कति मूल्यवान् छन् भन्ने कुरा म कहिल्यै पूर्ण रूपमा व्यक्त गर्न सक्दिनँ।
+
+अनि २३ सेप्टेम्बर २०२६ को त्यो पहिलो अँगालो… ❤️ संसारका लागि त्यो एउटा सामान्य अँगालो मात्र होला, तर मेरा लागि त्यो यस्तो सम्झना हो, जसलाई मेरो मुटुले जीवनभर सुरक्षित राख्नेछ।
+
+म तिमीलाई जीवन सधैँ पूर्ण र सजिलो हुन्छ भनेर वाचा गर्दिनँ। तर मेरो माया साँचो छ भनेर अवश्य वाचा गर्छु। तिम्रो खुसीको दिनमा मात्र होइन, तिम्रा कठिन दिनहरूमा पनि तिम्रो साथमा रहन चाहन्छु। तिमी हाँस्दा, रुँदा, बलियो महसुस गर्दा वा थाकेको बेला पनि तिम्रो साथ बन्न चाहन्छु। म हरेक दिन, हरेक पल फेरि-फेरि तिमीलाई नै रोज्न चाहन्छु।
+
+तिमी जस्तो छौ, त्यस्तै भएकोमा धन्यवाद Trishu। मेरो जीवनमा न्यानोपन, खुसी र यति धेरै माया ल्याइदिएकोमा धन्यवाद। तिम्रो जन्मदिनमा मेरो एउटै चाहना छ—तिमीले एकपटक आफूलाई मेरो आँखाबाट हेरिदिनू, ताकि तिमीले बुझ्न सक, तिमी मेरा लागि कति धेरै विशेष छौ।
+
+तिम्रा सबै सपना पूरा होऊन्। तिम्रो मुस्कान कहिल्यै नहराओस्। तिमीले पाउन योग्य हरेक खुसी तिम्रो जीवनमा आओस्।
+
+अनि समयसँगै जति नै जन्मदिनहरू बित्दै जाऊन्, म तिमीलाई यसरी नै माया गरिरहन पाऊँ। तिमीसँग नयाँ-नयाँ सम्झनाहरू बनाउन पाऊँ, तिम्रो हात समातिरहन पाऊँ र तिमी मेरा लागि कति अनमोल छौ भनेर सधैँ सम्झाइरहन पाऊँ।
+
+जन्मदिनको धेरै धेरै शुभकामना, मेरी माया। ❤️
+
+मेरो बेबी। मेरो खुसी। मेरो सबैथोक। 🌎❤️
+
+सधैँ तिम्रै भएर… 💋`;
+
+function startTyping(){
+ const el=document.getElementById('birthdayTyping');
+ const next=document.getElementById('nextLetterBtn');
+ clearInterval(typingTimer);
+ next.style.display='none';
+ el.textContent='';
+ const chars=Array.from(birthdayMessage);
+ let i=0;
+ typingTimer=setInterval(()=>{
+  el.textContent+=chars[i++]||'';
+  if(i>=chars.length){
+   clearInterval(typingTimer);
+   next.style.display='inline-block';
+  }
+ },32);
+}
+
+function startLoveLetterTyping(){
+ const el=document.getElementById('loveLetterTyping');
+ const next=document.getElementById('letterContinueBtn');
+ clearInterval(loveLetterTimer);
+ next.style.display='none';
+ el.textContent='';
+ const chars=Array.from(loveLetterMessage);
+ let i=0;
+ loveLetterTimer=setInterval(()=>{
+  el.textContent+=chars[i++]||'';
+  if(i>=chars.length){
+   clearInterval(loveLetterTimer);
+   next.style.display='inline-block';
+  }
+ },18);
+}
+
+function show(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
  document.getElementById(id).classList.add('active');
+ if(id==='p2')startTyping();
+ if(id==='p3')startLoveLetterTyping();
+ if(id==='p5')document.getElementById('count').textContent='Ready?';
 }
 
-function start() {
- const music = document.getElementById('music');
-
- music.play().catch(() => {
-   alert("गीत बजाउन फेरि बटन थिच्नुहोस् ❤️");
- });
-
- show('two');
+function startCake(){
+ const cake=document.getElementById('cake');
+ cake.classList.add('cutcake');
+ setTimeout(()=>{
+  document.getElementById('music').play().catch(()=>{});
+  show('p2');
+ },1000);
 }
 
+function countdown(){
+ let n=3;
+ const el=document.getElementById('count');
+ document.getElementById('countbtn').disabled=true;
+ el.textContent=n;
+ const t=setInterval(()=>{
+  n--;
+  el.textContent=n>0?n:'❤️';
+  if(n<=0){
+   clearInterval(t);
+   setTimeout(()=>show('p6'),600);
+  }
+ },900);
+}
+
+function checkQuiz(){
+ const answers=['a','a','a','a','a'];
+ const good=answers.every((v,i)=>
+  document.querySelector('input[name=q'+(i+1)+']:checked')?.value===v
+ );
+ const msg=document.getElementById('quizmsg');
+ if(good){
+  msg.textContent='All answers are right! ❤️';
+  setTimeout(()=>show('p8'),900);
+ }else{
+  msg.textContent='Oops, try again my love 🥹❤️';
+ }
+}
+
+document.getElementById('voiceFile').addEventListener('change',e=>{
+ const f=e.target.files[0];
+ const a=document.getElementById('voicePreview');
+ if(f){
+  a.src=URL.createObjectURL(f);
+  a.style.display='block';
+ }
+});
+
+document.getElementById('videoFile').addEventListener('change',e=>{
+ const f=e.target.files[0];
+ const v=document.getElementById('videoPreview');
+ if(f){
+  v.src=URL.createObjectURL(f);
+  v.style.display='block';
+ }
+});
+
+for(let i=0;i<22;i++){
+ let h=document.createElement('span');
+ h.className='heart';
+ h.textContent='♥';
+ h.style.left=Math.random()*100+'%';
+ h.style.animationDelay=Math.random()*10+'s';
+ h.style.fontSize=(14+Math.random()*24)+'px';
+ h.style.animationDuration=(8+Math.random()*8)+'s';
+ document.getElementById('hearts').appendChild(h);
+}
+
+for(let i=0;i<18;i++){
+ let p=document.createElement('span');
+ p.className='petal';
+ p.textContent='🌹';
+ p.style.left=Math.random()*100+'%';
+ p.style.animationDelay=Math.random()*12+'s';
+ p.style.animationDuration=(10+Math.random()*8)+'s';
+ document.getElementById('petals').appendChild(p);
+}
+
+for(let i=0;i<9;i++){
+ let b=document.createElement('span');
+ b.className='balloon';
+ b.textContent=['🎈','💗','🎈'][i%3];
+ b.style.left=Math.random()*100+'%';
+ b.style.animationDelay=Math.random()*14+'s';
+ document.getElementById('balloons').appendChild(b);
+}
 </script>
-
 </body>
 </html>
